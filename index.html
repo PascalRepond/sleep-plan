@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sleep Plan App</title>
+  
+  <style src='style.css'></style>
+</head>
+<body>
+  <header>
+    <h1>Sleep Plan App</h1>
+  </header>
+
+  <section class="container">
+    <form id="sleepform">
+
+      <!-- Error message -->
+      <div class="msg"></div>
+
+      <div>
+        <label for="wakeup">What time do you have/want to wake up tomorrow?</label>
+        <input type="time" id="wakeup">
+      </div>
+
+      <div>
+          <label for="sleeptime">How long would you like to sleep for?</label>
+          <select id="sleeptime">
+              <option value="3h">3h</option>
+              <option value="4h30">4h30</option>
+              <option value="6h">6h</option>
+              <option value="7h30">7h30</option>
+              <option value="9h">9h</option>
+              <option value="10h30">10h30</option>
+            </select>
+      </div>
+
+      <input class="btn" type="submit" value="Submit">
+
+      <!-- <div>
+        <label for="fallingasleep">How long does it take you to fall asleep?</label>
+
+      </div> -->
+
+    </form>
+
+    <section id="result" style="display: none">
+      <h2>You should:</h2>
+      <p>Turn off all screens around <span id="screens"></span></p>
+      <p>Turn off the lights at <span id="lights"></span></p>
+      <p>This way, you should fall asleep at <span id="zzz"></span> and get <span id="sleeptime"></span> (<span id="cycles"></span> cycles).</p>
+      <h2>Good night!</h2>
+    </section>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
