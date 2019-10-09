@@ -17,23 +17,23 @@
     <form id="sleepform">
 
       <!-- Error message -->
-      <div class="msg"></div>
+      <div id="msg"></div>
 
       <div>
         <label for="wakeup">What time do you have/want to wake up tomorrow?</label>
-        <input type="time" id="wakeup">
+        <input type="time" id="wakeup" name="wakeup">
       </div>
 
       <div>
           <label for="sleeptime">How long would you like to sleep for?</label>
-          <select id="sleeptime">
-              <option value="03:00">3h</option>
-              <option value="04:30">4h30</option>
-              <option value="06:00">6h</option>
-              <option value="07:30">7h30</option>
-              <option value="09:00">9h</option>
-              <option value="10:30">10h30</option>
-            </select>
+          <select id="sleeptime" name="sleeptime">
+            <option value="03:00:2">3h</option>
+            <option value="04:30:3">4h30</option>
+            <option value="06:00:4">6h</option>
+            <option value="07:30:5">7h30</option>
+            <option value="09:00:6">9h</option>
+            <option value="10:30:7">10h30</option>
+          </select>
       </div>
 
       <input class="btn" type="submit" value="Submit">
@@ -47,9 +47,9 @@
 
     <section id="result" style="display: none">
       <h2>You should:</h2>
-      <p>Turn off all screens around <span id="screens"></span></p>
+      <p>Turn off all screens and dim your lights around <span id="screens"></span></p>
       <p>Turn off the lights at <span id="lights"></span></p>
-      <p>This way, you should fall asleep at <span id="zzz"></span> and get <span id="sleeptime"></span> (<span id="cycles"></span> cycles).</p>
+      <p>This way, you should fall asleep at <span id="zzz"></span> and get a full <span id="hoursofsleep"></span> hours of sleep (that's <span id="cycles"></span> sleep cycles).</p>
       <h2>Good night!</h2>
     </section>
   </section>
