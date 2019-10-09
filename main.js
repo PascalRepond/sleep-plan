@@ -27,7 +27,7 @@ function submit(e) {
   e.preventDefault();
 
   if(wakeup.value === "" || undefined){
-    msg.innerHTML = "Veuillez saisir des valeurs dans tous les champs.";
+    msg.innerHTML = "Please select valid values in all fields.";
 
     setTimeout(() => msg.remove(), 4000);
   } else {
