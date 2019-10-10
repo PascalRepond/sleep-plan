@@ -1,59 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sleep Plan App</title>
-  
-  <style src='style.css'></style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
+
 <body>
   <header>
-    <h1>Sleep Plan App</h1>
+
   </header>
 
-  <section class="container">
-    <form id="sleepform">
+  <div class="container">
+    <div class="title">
+      <h1>Sleep Plan</h1>
+    </div>
+    <div class="form">
+      <form id="sleepform">
 
-      <!-- Error message -->
-      <div id="msg"></div>
+        <!-- Error message -->
+        <div id="msg"></div>
 
-      <div>
-        <label for="wakeup">What time do you have/want to wake up tomorrow?</label>
-        <input type="time" id="wakeup" name="wakeup" value="06:00">
-      </div>
+        <div class="form-part">
+          <label for="wakeup">Se lever à : </label>
+          <input type="time" id="wakeup" name="wakeup" value="06:00">
+        </div>
 
-      <div>
-          <label for="sleeptime">How long would you like to sleep for?</label>
+        <div class="form-part">
+          <label for="sleeptime">Heures de sommeil souhaitées : </label>
           <select id="sleeptime" name="sleeptime">
             <option value="03:00:2">3h</option>
-            <option value="04:30:3">4h30</option>
+            <option value="04:30:3">4h</option>
+            <option value="04:30:3">5h</option>
             <option value="06:00:4">6h</option>
-            <option value="07:30:5" selected="selected">7h30</option>
+            <option value="07:30:5" selected="selected">7h</option>
+            <option value="07:30:5">8h</option>
             <option value="09:00:6">9h</option>
-            <option value="10:30:7">10h30</option>
+            <option value="10:30:7">10h</option>
           </select>
+        </div>
+
+        <input class="button" type="submit" value="Calculer">
+
+      </form>
+    </div>
+
+      <div id="result" style="display: none">
+        <h3>Pour optimiser votre sommeil</h3>
+        <p>Eteignez vos écrans autour de <span id="screens"></span></p>
+        <p>Eteignez la lumière à <span id="lights"></span></p>
+        <p>Vous devriez vous endormir vers <span id="zzz"></span> et vous dormirez <span id="hoursofsleep"></span>
+          heures, soit <span id="cycles"></span> cycles de sommeil.</p>
+        <h2>Bonne nuit!</h2>
       </div>
+  </div>
 
-      <input class="btn" type="submit" value="Submit">
+  <footer>
 
-      <!-- <div>
-        <label for="fallingasleep">How long does it take you to fall asleep?</label>
-
-      </div> -->
-
-    </form>
-
-    <section id="result" style="display: none">
-      <h2>You should:</h2>
-      <p>Turn off all screens and dim your lights around <span id="screens"></span></p>
-      <p>Turn off the lights at <span id="lights"></span></p>
-      <p>This way, you should fall asleep at <span id="zzz"></span> and get a full <span id="hoursofsleep"></span> hours of sleep (that's <span id="cycles"></span> sleep cycles).</p>
-      <h2>Good night!</h2>
-    </section>
-  </section>
+  </footer>
 
   <script src="main.js"></script>
 </body>
+
 </html>
