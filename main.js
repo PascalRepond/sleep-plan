@@ -5,6 +5,8 @@ document.getElementById("sleepform").addEventListener("submit", submit);
 
 // OUTPUT
 const msg = document.querySelector('#msg'); // Error message
+const notifWarning = document.querySelector('.warning');
+const notifDanger = document.querySelector('.danger');
 
 const result = document.querySelector('#result'); //Result section
 
@@ -63,3 +65,30 @@ function submit(e) {
     result.style.display = "block";
   };
 };
+
+// Warning sleeptime
+function change(selBox) {
+  console.log(selBox);
+  if (selBox === "06:00:4") {
+    notifDanger.style.display = "none";
+    notifWarning.style.display = "block";
+  } else if (selBox === "03:00:2" || selBox === "04:30:3") {
+    notifWarning.style.display = "none";
+    notifDanger.style.display = "block";
+  } else {
+    notifDanger.style.display = "none";
+    notifWarning.style.display = "none";
+  }
+};
+
+
+
+// Close button result message
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    $notification = $delete.parentNode;
+    $delete.addEventListener('click', () => {
+      $notification.style.display = "none";
+    });
+  });
+});
