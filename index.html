@@ -17,45 +17,61 @@
 
   </header>
 
-  <div class="container">
-    <div class="title">
-      <h1>Sleep Plan</h1>
+  <section class="section">
+    <div class="container title">
+      <h1 class="has-text-centered"><i class="fas fa-moon"></i> SleepPlan</h1>
     </div>
-    <div class="form">
+    <div class="container">
       <form id="sleepform">
 
         <!-- Error message -->
         <div id="msg"></div>
 
-        <div class="form-part">
-          <label for="wakeup">Se lever à : </label>
-          <input class="input is-rounded" type="time" id="wakeup" name="wakeup" value="06:00">
+        <div class="field">
+          <label class="label" for="wakeup">Se lever à : </label>
+          <div class="control has-icons-left">
+            <input class="input is-medium" type="time" id="wakeup" name="wakeup" value="06:00">
+            <span class="icon is-left"><i class="far fa-clock"></i></span>
+          </div>
         </div>
 
-        <div class="form-part">
-          <label for="sleeptime">Heures de sommeil souhaitées : </label>
-          <div class="select is-rounded is-fullwidth">
-            <select id="sleeptime" name="sleeptime" onchange="change(this.value)">
-              <option value="03:00:2">3h</option>
-              <option value="04:30:3">4h</option>
-              <option value="04:30:3">5h</option>
-              <option value="06:00:4">6h</option>
-              <option value="07:30:5">7h</option>
-              <option value="07:30:5" selected="selected">8h</option>
-              <option value="09:00:6">9h</option>
-              <option value="10:30:7">10h</option>
-            </select>
+        <div class="field">
+          <label class="label" for="sleeptime">Heures de sommeil souhaitées : </label>
+          <div class="control has-icons-left">
+            <div class="select is-fullwidth is-medium">
+              <select id="sleeptime" name="sleeptime" onchange="change(this.value)">
+                <option value="03:00:2">3h</option>
+                <option value="04:30:3">4h</option>
+                <option value="04:30:3">5h</option>
+                <option value="06:00:4">6h</option>
+                <option value="07:30:5">7h</option>
+                <option value="07:30:5" selected="selected">8h</option>
+                <option value="09:00:6">9h</option>
+                <option value="10:30:7">10h</option>
+              </select>
             </div>
-            <div class="warning notification is-warning" style="display:none">Ne dormir que 6-7h par nuit de manière régulière est dangereux pour votre santé. <br/> On ne parle de <em>bonne nuit de sommeil</em> quà partir de 5-6 cycles (7h30-9h00) de sommeil.</div>
-            <div class="danger notification is-danger" style="display:none">Dormir moins de 6h (4 cycles de sommeil ou moins) est dévastateur pour votre santé générale. <br/> Le temps de sommeil recommandé est d'au moins 5 cycles (7h30-8h00).</div>
+            <div class="icon is-left">
+              <i class="fas fa-bed"></i>
+            </div>
+          </div>
         </div>
 
-        <input class="button is-medium is-fullwidth is-white" type="submit" value="Calculer">
+        <div class="warning notification is-warning" style="display:none">
+          <p><i class="fas fa-exclamation-triangle"></i> Se contenter de 6h de sommeil par nuit a un effet sur votre santé comparable à celui du tabac. Une vraie <em>bonne nuit de sommeil</em> doit durer au minimum 5-6 cycles (7h30-9h00). <br /> 
+          <span><a href="http://example.org">Source</a></span></p>
+        </div>
+
+        <div class="danger notification is-danger" style="display:none">
+          <p><i class="fas fa-exclamation-circle"></i> Dormir moins de 6h (4 cycles de sommeil) est <strong>dévastateur</strong> pour votre santé générale. Une <em>bonne nuit de sommeil</em> doit durer au minimum 5-6 cycles (7h30-9h00). <br />
+          <span><a href="http://example.org">Source</a></span></p>
+        </div>
+
+        <input class="button is-large" type="submit" value="Calculer">
 
       </form>
     </div>
 
-      <div id="result" class="notification is-link slide-in-bottom" style="display: none">
+      <div id="result" class="conatiner notification is-link slide-in-bottom" style="display: none">
         <button class="delete"></button>
         <h3>Pour optimiser votre sommeil</h3>
         <p>Eteignez vos écrans autour de <span id="screens" class="time"></span></p>
@@ -64,7 +80,7 @@
           heures, soit <span id="cycles"></span> cycles de sommeil.</p>
         <h2>Bonne nuit!</h2>
       </div>
-  </div>
+  </section>
 
   <footer>
 
