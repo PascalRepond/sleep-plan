@@ -4,7 +4,6 @@ const sleeptime = document.querySelector('#sleeptime');
 document.getElementById("sleepform").addEventListener("submit", submit);
 
 // OUTPUT
-const msg = document.querySelector('#msg'); // Error message
 const notifWarning = document.querySelector('.warning');
 const notifDanger = document.querySelector('.danger');
 
@@ -28,42 +27,36 @@ function under10(x) {
 function submit(e) {
   e.preventDefault();
 
-  if(wakeup.value === "" || undefined){
-    msg.innerHTML = "Veuillez saisir des valeurs dans tous les champs.";
+  // GET INPUT VALUES
+  let wakeupvalue = wakeup.value.split(":");
+  let sleeptimevalue = sleeptime.value.split(":");
 
-    setTimeout(() => msg.remove(), 4000);
-  } else {
-    // GET INPUT VALUES
-    let wakeupvalue = wakeup.value.split(":");
-    let sleeptimevalue = sleeptime.value.split(":");
+  // PRINT NUMBER OF CYCLES IN HTML
+  cycles.innerHTML = sleeptimevalue[2];
 
-    // PRINT NUMBER OF CYCLES IN HTML
-    cycles.innerHTML = sleeptimevalue[2];
+  // PRINT HOURS OF SLEEP IN HTML
+  hoursofsleep.innerHTML = `${sleeptimevalue[0]}:${sleeptimevalue[1]}`;
 
-    // PRINT HOURS OF SLEEP IN HTML
-    hoursofsleep.innerHTML = `${sleeptimevalue[0]}:${sleeptimevalue[1]}`;
-
-    // CALCULATE TIME YOU HAVE TO FALL ASLEEP AND PRINT
-    let date = new Date(2,1,1970, wakeupvalue[0], wakeupvalue[1], 0);
-    date.setHours(date.getHours() - sleeptimevalue[0]);
-    date.setMinutes(date.getMinutes() - sleeptimevalue[1]);
+  // CALCULATE TIME YOU HAVE TO FALL ASLEEP AND PRINT
+  let date = new Date(2, 1, 1970, wakeupvalue[0], wakeupvalue[1], 0);
+  date.setHours(date.getHours() - sleeptimevalue[0]);
+  date.setMinutes(date.getMinutes() - sleeptimevalue[1]);
 
 
-    zzz.innerHTML = `${under10(date.getHours())}:${under10(date.getMinutes())}`;
+  zzz.innerHTML = `${under10(date.getHours())}:${under10(date.getMinutes())}`;
 
-    // CALCULATE TIME TO TURN OFF LIGHTS
-    date.setMinutes(date.getMinutes() - 30);
+  // CALCULATE TIME TO TURN OFF LIGHTS
+  date.setMinutes(date.getMinutes() - 30);
 
-    lights.innerHTML = `${under10(date.getHours())}:${under10(date.getMinutes())}`;
+  lights.innerHTML = `${under10(date.getHours())}:${under10(date.getMinutes())}`;
 
-    // TIME TO TURN OFF SCREENS
-    date.setMinutes(date.getMinutes() - 60);
+  // TIME TO TURN OFF SCREENS
+  date.setMinutes(date.getMinutes() - 60);
 
-    screens.innerHTML = `${under10(date.getHours())}:${under10(date.getMinutes())}`;
+  screens.innerHTML = `${under10(date.getHours())}:${under10(date.getMinutes())}`;
 
-    // SHOW RESULTS
-    result.style.display = "block";
-  };
+  // SHOW RESULTS
+  result.style.display = "block";
 };
 
 // Warning sleeptime
@@ -85,10 +78,10 @@ function change(selBox) {
 
 // Close button result message
 document.addEventListener('DOMContentLoaded', () => {
-  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-    $notification = $delete.parentNode;
+  (document.querySelectorAll('.message .delete') || []).forEach(($delete) => {
+    $message = $delete.parentNode;
     $delete.addEventListener('click', () => {
-      $notification.style.display = "none";
+      $message.parentNode.style.display = "none";
     });
   });
 });

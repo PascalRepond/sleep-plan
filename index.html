@@ -12,7 +12,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
-<body>
+<body class="main">
   <header>
 
   </header>
@@ -30,7 +30,7 @@
         <div class="field">
           <label class="label" for="wakeup">Se lever à : </label>
           <div class="control has-icons-left">
-            <input class="input is-medium" type="time" id="wakeup" name="wakeup" value="06:00">
+            <input required class="input is-medium" type="time" id="wakeup" name="wakeup" value="06:00">
             <span class="icon is-left"><i class="far fa-clock"></i></span>
           </div>
         </div>
@@ -39,13 +39,15 @@
           <label class="label" for="sleeptime">Heures de sommeil souhaitées : </label>
           <div class="control has-icons-left">
             <div class="select is-fullwidth is-medium">
-              <select id="sleeptime" name="sleeptime" onchange="change(this.value)">
+              <select id="sleeptime" name="sleeptime" placeholder="Sélectionnez votre temps" required
+                onchange="change(this.value)">
+                <option value="" disabled selected="selected">Sélectionner une option</option>
                 <option value="03:00:2">3h</option>
                 <option value="04:30:3">4h</option>
                 <option value="04:30:3">5h</option>
                 <option value="06:00:4">6h</option>
                 <option value="07:30:5">7h</option>
-                <option value="07:30:5" selected="selected">8h</option>
+                <option value="07:30:5">8h</option>
                 <option value="09:00:6">9h</option>
                 <option value="10:30:7">10h</option>
               </select>
@@ -57,33 +59,48 @@
         </div>
 
         <div class="warning notification is-warning" style="display:none">
-          <p><i class="fas fa-exclamation-triangle"></i> Se contenter de 6h de sommeil par nuit a un effet sur votre santé comparable à celui du tabac. Une vraie <em>bonne nuit de sommeil</em> doit durer au minimum 5-6 cycles (7h30-9h00). <br /> 
-          <span><a href="http://example.org">Source</a></span></p>
+          <p><i class="fas fa-exclamation-triangle"></i> Se contenter de 6h de sommeil par nuit a un effet sur votre
+            santé comparable à celui du tabac. Une vraie <em>bonne nuit de sommeil</em> doit durer au minimum 5-6 cycles
+            (7h30-9h00). <br />
+            <span><a href="http://example.org">Source</a></span></p>
         </div>
 
         <div class="danger notification is-danger" style="display:none">
-          <p><i class="fas fa-exclamation-circle"></i> Dormir moins de 6h (4 cycles de sommeil) est <strong>dévastateur</strong> pour votre santé générale. Une <em>bonne nuit de sommeil</em> doit durer au minimum 5-6 cycles (7h30-9h00). <br />
-          <span><a href="http://example.org">Source</a></span></p>
+          <p><i class="fas fa-exclamation-circle"></i> Dormir moins de 6h (4 cycles de sommeil) est
+            <strong>dévastateur</strong> pour votre santé générale. Une <em>bonne nuit de sommeil</em> doit durer au
+            minimum 5-6 cycles (7h30-9h00). <br />
+            <span><a href="http://example.org">Source</a></span></p>
         </div>
 
-        <input class="button is-large" type="submit" value="Calculer">
+        <div class="has-text-centered">
+          <input class="button is-large" type="submit" value="Calculer">
+        </div>
 
       </form>
     </div>
-
-      <div id="result" class="conatiner notification is-link slide-in-bottom" style="display: none">
-        <button class="delete"></button>
-        <h3>Pour optimiser votre sommeil</h3>
-        <p>Eteignez vos écrans autour de <span id="screens" class="time"></span></p>
-        <p>Eteignez la lumière à <span id="lights" class="time"></span></p>
-        <p>Vous devriez vous endormir vers <span id="zzz" class="time"></span> et vous dormirez <span id="hoursofsleep"></span>
-          heures, soit <span id="cycles"></span> cycles de sommeil.</p>
-        <h2>Bonne nuit!</h2>
-      </div>
   </section>
 
-  <footer>
+  <section class="container">
+    <article id="result" class="message slide-in-bottom" style="display:none">
+      <div class="message-header is-size-4-desktop">
+        <p>Pour optimiser votre nuit :</p>
+        <button class="delete" aria-label="delete"></button>
+      </div>
 
+      <div class="message-body is-size-5-desktop">
+        <p>📱 Eteignez vos écrans et tamisez les lumières autour de <i class="fas fa-clock"></i> <span id="screens" class="time"></span>.<br/>
+        💡 Eteignez la lumière et mettez-vous au lit à <i class="fas fa-clock"></i> <span id="lights" class="time"></span>.<br/>
+        Vous devriez vous endormir vers <i class="fas fa-clock"></i> <span id="zzz" class="time"></span> et vous dormirez <span id="hoursofsleep"></span>, soit <span class="time" id="cycles"></span> cycles de sommeil.</p>
+      </div>
+    </article>
+  </section>
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>Made with ❤ in Switzerland<br/>
+      Styled with <a href="https://bulma.io/">Bulma</a> <a href=""></a> - Icons by <a href="https://fontawesome.com/">Font Awesome</a> - Animations: <a href="http://animista.net">Animista</a></p>
+    </div>
   </footer>
 
   <script src="main.js"></script>
