@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -8,18 +8,24 @@
   <title>Sleep Plan App</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
   <link rel="stylesheet" href="style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body class="main">
   <header>
-
+    <nav class="navbar">
+      <ul class="flex">
+        <li class="p-6"><a class="hov block text-gray-400" href="index.html">Sleep Plan</a></li>
+        <li class="p-6"><a class="hov block text-gray-400" href="more.html">En savoir plus</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="section">
     <div class="container title">
-      <h1 class="has-text-centered"><i class="fas fa-moon"></i> SleepPlan</h1>
+      <h1 class="has-text-centered"> Sleep<i class="is-size-2 has-text-warning fas fa-moon"></i>Plan</h1>
     </div>
     <div class="container">
       <form id="sleepform">
@@ -59,13 +65,21 @@
         </div>
 
         <div class="warning notification is-warning" style="display:none">
-          <p><i class="fas fa-exclamation-triangle"></i> Se contenter de 6h de sommeil par nuit a un effet sur votre santé comparable à celui du tabac. Une vraie <em>bonne nuit de sommeil</em> doit durer au minimum 5-6 cycles (7h30-9h00). <br />
-          <span><a href="http://example.org">Source</a></span></p>
+          <p><i class="fas fa-exclamation-triangle"></i> Se contenter de 6h de sommeil par nuit peut avoir un effet
+            négatif sur votre santé. Une vraie <em>bonne nuit de sommeil</em> doit durer en moyenne 5-6 cycles
+            (7h30-9h00) pour un adulte. <br />
+            <span><a
+                href="https://www.sleepfoundation.org/sites/default/files/2018-10/NSF_sleep_duration_recommendations_chart.png">Source</a></span>
+          </p>
         </div>
 
         <div class="danger notification is-danger" style="display:none">
-          <p><i class="fas fa-exclamation-circle"></i> Dormir moins de 6h (4 cycles de sommeil) est <strong>dévastateur</strong> pour votre santé générale et votre espérance de vie. Une <em>bonne nuit de sommeil</em> doit durer au minimum 5-6 cycles (7h30-9h00). <br />
-          <span><a href="http://example.org">Source</a></span></p>
+          <p><i class="fas fa-exclamation-circle"></i> Dormir moins de 6h (4 cycles de sommeil) est
+            <strong>dévastateur</strong> pour votre santé générale et votre espérance de vie quel que soit votre âge.
+            Une <em>bonne nuit de sommeil</em> devrait durer au minimum 5-6 cycles (7h30-9h00). <br />
+            <span><a
+                href="https://www.sleepfoundation.org/sites/default/files/2018-10/NSF_sleep_duration_recommendations_chart.png">Source</a></span>
+          </p>
         </div>
 
         <div class="has-text-centered">
@@ -84,9 +98,16 @@
       </div>
 
       <div class="message-body is-size-5-desktop">
-        <p>📱 Eteignez vos écrans et tamisez les lumières autour de <i class="fas fa-clock"></i> <span id="screens" class="time"></span>.<br/>
-        💡 Eteignez la lumière et mettez-vous au lit à <i class="fas fa-clock"></i> <span id="lights" class="time"></span>.<br/>
-        Vous devriez vous endormir vers <i class="fas fa-clock"></i> <span id="zzz" class="time"></span> et vous dormirez <span id="hoursofsleep"></span>, soit <span class="time" id="cycles"></span> cycles de sommeil.</p>
+        <p>📱 Eteignez vos écrans et tamisez les lumières autour de <i class="fas fa-clock"></i> <span id="screens"
+            class="time"></span>.<br />
+          💡 Eteignez la lumière et mettez-vous au lit à <i class="fas fa-clock"></i> <span id="lights"
+            class="time"></span>.<br />
+          Vous devriez vous endormir vers <i class="fas fa-clock"></i> <span id="zzz" class="time"></span> et vous
+          dormirez <span id="hoursofsleep"></span>, soit <span class="time" id="cycles"></span> cycles de sommeil.</p>
+        <p class="avis"><i class="fas fa-exclamation-triangle"></i> Ce test à valeur indicative se base sur des
+          approximations de durée de cycle de sommeil (~90 minutes) et de durée d'endormissement (~30 minutes). Il ne
+          remplace en aucun cas un avis médical. Vous êtes vivement encouragé.e à faire vos propres recherches. <a
+            href="more.html">Par où commencer ?</a></p>
       </div>
     </article>
   </section>
@@ -94,8 +115,9 @@
 
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>Made with ❤ in Switzerland<br/>
-      Styled with <a href="https://bulma.io/">Bulma</a> <a href=""></a> - Icons by <a href="https://fontawesome.com/">Font Awesome</a> - Animations: <a href="http://animista.net">Animista</a></p>
+      <p>Made with ❤ in Switzerland<br />
+        Styled with <a href="https://bulma.io/">Bulma</a> <a href=""></a> - Icons by <a
+          href="https://fontawesome.com/">Font Awesome</a> - Animations: <a href="http://animista.net">Animista</a></p>
     </div>
   </footer>
 
