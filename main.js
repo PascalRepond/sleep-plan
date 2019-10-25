@@ -3,6 +3,7 @@ const wakeup = document.querySelector('#wakeup');
 const sleeptime = document.querySelector('#sleeptime');
 document.getElementById("sleepform").addEventListener("submit", submit);
 
+
 // OUTPUT
 const notifWarning = document.querySelector('.warning');
 const notifDanger = document.querySelector('.danger');
@@ -14,6 +15,8 @@ const screens = document.querySelector("#screens"); // HTML time to turn off scr
 const lights = document.querySelector("#lights"); // HTML time to turn off lights
 const cycles = document.querySelector('#cycles'); // HTML number of cycles
 const hoursofsleep = document.querySelector('#hoursofsleep'); // HTML hours of sleep
+
+document.getElementById("sleeptime").addEventListener("change", function(){change(sleeptime.value)}, false);
 
 function under10(x) {
   if(x<10) {
@@ -61,7 +64,6 @@ function submit(e) {
 
 // Warning sleeptime
 function change(selBox) {
-  console.log(selBox);
   if (selBox === "06:00:4") {
     notifDanger.style.display = "none";
     notifWarning.style.display = "block";
